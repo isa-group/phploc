@@ -1,5 +1,15 @@
 <?php
 /*
+* Changes in Analyser
+*
+* Deletions: 
+* - [line 19] namespace SebastianBergmann\PHPLOC
+* Additions:
+* - [line 102] Non-Comment Lines Of Code ('ncloc' => 0)
+* 
+*/
+
+/*
  * This file is part of PHPLOC.
  *
  * (c) Sebastian Bergmann <sebastian@phpunit.de>
@@ -8,7 +18,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SebastianBergmann\PHPLOC;
+
 
 /**
  * PHPLOC code analyser.
@@ -90,6 +100,7 @@ class Analyser
       'methodLlocMin'               => 0,
       'methodLlocAvg'               => 0,
       'methodLlocMax'               => 0,
+      'ncloc'                       => 0,
     ];
 
     /**
