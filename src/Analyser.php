@@ -3,10 +3,11 @@
 * Changes in Analyser
 *
 * Deletions: 
-* - [line 19] namespace SebastianBergmann\PHPLOC
+* - [line 19] namespace SebastianBergmann\PHPLOC.
 * Additions:
-* - [line 102] Non-Comment Lines Of Code ('ncloc' => 0)
-* 
+* - [line 102] Non-Comment Lines Of Code ('ncloc' => 0).
+*  Changes:
+* - Array variables initialized as null was changed by '[]'.
 */
 
 /*
@@ -299,8 +300,8 @@ class Analyser
         $className         = null;
         $functionName      = null;
         $testClass         = false;
-        $currentClassData  = null;
-        $currentMethodData = null;
+        $currentClassData  = [];
+        $currentMethodData = [];
 
         for ($i = 0; $i < $numTokens; $i++) {
             if (is_string($tokens[$i])) {
@@ -349,14 +350,14 @@ class Analyser
                             if ($currentMethodData !== null) {
                                 $this->methodCcn[]  = $currentMethodData['ccn'];
                                 $this->methodLloc[] = $currentMethodData['lloc'];
-                                $currentMethodData  = null;
+                                $currentMethodData  = [];
                             }
                         } elseif ($block == $className) {
                             $className         = null;
                             $testClass         = false;
                             $this->classCcn[]  = $currentClassData['ccn'];
                             $this->classLloc[] = $currentClassData['lloc'];
-                            $currentClassData  = null;
+                            $currentClassData  = [];
                         }
                     }
                 }
