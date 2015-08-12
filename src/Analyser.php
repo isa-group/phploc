@@ -1,5 +1,6 @@
 <?php
 /*
+* Version 1.0
 * Changes in Analyser
 *
 * Deletions: 
